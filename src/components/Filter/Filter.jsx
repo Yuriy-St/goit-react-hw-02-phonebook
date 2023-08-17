@@ -1,21 +1,20 @@
-import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FilterStyled } from './Filter.styled';
 
-export default class Filter extends Component {
-  handleChange = ({ target }) => {
-    this.props.onChange(target.value);
+export default function Filter({ value, onChange }) {
+  const handleChange = ({ target }) => {
+    onChange(target.value);
   };
 
-  render() {
-    return (
-      <FilterStyled>
-        <p>Find contacts by name</p>
-        <input
-          type="text"
-          value={this.props.value}
-          onChange={this.handleChange}
-        />
-      </FilterStyled>
-    );
-  }
+  return (
+    <FilterStyled>
+      <p>Find contacts by name</p>
+      <input type="text" value={value} onChange={handleChange} />
+    </FilterStyled>
+  );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
@@ -70,3 +71,7 @@ export default function ContactForm({ handleSubmit }) {
     </Formik>
   );
 }
+
+ContactForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};

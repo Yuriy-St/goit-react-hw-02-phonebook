@@ -3,6 +3,7 @@ export const color = {
   _2: '#a53cf2',
   _3: '#e84b69',
   _4: '#20b8c5',
+  danger: '#bb1111',
   error: '#ff1111',
   offline: '#fa554d',
   online: '#5aa959',

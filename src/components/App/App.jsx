@@ -39,6 +39,12 @@ export default class App extends Component {
     this.setState({ filter: value });
   };
 
+  handleDeleteContact = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   render() {
     const { contacts, filter } = this.state;
     return (
@@ -52,7 +58,11 @@ export default class App extends Component {
           <Subtitle>Contacts</Subtitle>
           <Filter value={filter} onChange={this.handleFilterChange} />
           {contacts.length ? (
-            <ContactList contacts={contacts} filter={filter} />
+            <ContactList
+              contacts={contacts}
+              filter={filter}
+              onDelete={this.handleDeleteContact}
+            />
           ) : null}
         </div>
       </Container>
