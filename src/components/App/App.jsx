@@ -16,7 +16,21 @@ export default class App extends Component {
     filter: '',
   };
 
+  isValidContact = name => {
+    const isSameContact = this.state.contacts.some(
+      contact => contact.name === name
+    );
+    console.log(isSameContact);
+    if (isSameContact) {
+      alert(`${name} is already in contacts!`);
+      return false;
+    }
+
+    return true;
+  };
+
   handleSubmit = contact => {
+    if (!this.isValidContact(contact.name)) return;
     this.setState({ name: contact.name });
     this.setState(({ contacts }) => ({ contacts: [...contacts, contact] }));
   };
