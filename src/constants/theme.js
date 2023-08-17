@@ -3,6 +3,7 @@ export const color = {
   _2: '#a53cf2',
   _3: '#e84b69',
   _4: '#20b8c5',
+  error: '#ff1111',
   offline: '#fa554d',
   online: '#5aa959',
   grey_100: '#F0F2F2',
@@ -18,13 +19,13 @@ export const color = {
 };
 
 export const text = {
-  xxl: '32px',
-  xl: '28px',
-  l: '24px',
-  m: '20px',
-  s: '16px',
-  xs: '14px',
-  xxs: '12px',
+  xxl: '2rem',
+  xl: '1.75rem',
+  l: '1.50rem',
+  m: '1.25rem',
+  s: '1rem',
+  xs: '0.875rem',
+  xxs: '0.75rem',
 };
 
 export const space = v => `${4 * v}px`;

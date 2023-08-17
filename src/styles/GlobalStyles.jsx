@@ -6,7 +6,7 @@ export const GlobalStyles = () => {
     body {
       height: 100vh;
       color: ${color.grey_800};
-      background-color: ${color.grey_300};
+      background-color: ${color.grey_100};
     }
   `;
 };

@@ -1,13 +1,18 @@
 import styled from '@emotion/styled';
-import { flexCol } from './Base/Flex.styled';
-import { container } from './Base/Container.styled';
-import { space } from 'constants/theme';
+import { flexCol } from 'components/Base/Flex.styled';
+import { container } from 'components/Base/Container.styled';
+import { text } from 'constants/theme';
 
 export const Container = styled.div`
   ${flexCol}
   ${container}
   label: appContainer;
-  gap: ${space(10)};
-  padding-top: ${space(10)};
-  padding-bottom: ${space(10)};
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  row-gap: 2.5em;
+`;
+
+export const Title = styled.h1`
+  margin-bottom: 0.7em;
+  font-size: ${text.xxl};
 `;
