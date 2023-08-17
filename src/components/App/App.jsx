@@ -3,6 +3,7 @@ import { Container, Title } from './App.styled';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { Subtitle } from 'components/Subtitle/Subtitle.styled';
 import ContactList from 'components/ContactList';
+import Filter from 'components/Filter/Filter';
 
 export default class App extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    name: '',
+    filter: '',
   };
 
   handleSubmit = contact => {
@@ -20,8 +21,12 @@ export default class App extends Component {
     this.setState(({ contacts }) => ({ contacts: [...contacts, contact] }));
   };
 
+  handleFilterChange = value => {
+    this.setState({ filter: value });
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
     return (
       <Container>
         <div>
@@ -31,7 +36,10 @@ export default class App extends Component {
 
         <div>
           <Subtitle>Contacts</Subtitle>
-          {contacts.length ? <ContactList contacts={contacts} /> : null}
+          <Filter value={filter} onChange={this.handleFilterChange} />
+          {contacts.length ? (
+            <ContactList contacts={contacts} filter={filter} />
+          ) : null}
         </div>
       </Container>
     );

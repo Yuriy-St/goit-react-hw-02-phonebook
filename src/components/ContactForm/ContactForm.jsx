@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
